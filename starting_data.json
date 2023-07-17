@@ -1,0 +1,139 @@
+{
+  "startDate": "2021-11-01 00:00:00",
+  "endDate": "2021-12-01 00:00:00",
+  "discreteness": 3600,
+  "stations": [
+    {
+      "name": "Радужный",
+      "type": "TERMINAL",
+      "loadSpeed": 200,
+      "curCap": 6000,
+      "prodSpeed": {"mean": 150, "SD": 10},
+      "wayNum": 1
+    },
+    {
+      "name": "Звезда",
+      "type": "TERMINAL",
+      "loadSpeed": 250,
+      "curCap": 5000,
+      "prodSpeed": {"mean": 50, "SD": 2},
+      "wayNum": 1
+    },
+    {
+      "name": "Полярный",
+      "type": "TRANSSHIPMENT",
+      "loadSpeed": 300,
+      "unloadSpeed": 200,
+      "curCap": 0,
+      "maxCap": 15000,
+      "accumCap": 10000,
+      "wayNum": 3
+    }
+  ],
+  "routes": [
+    {
+      "name": "Радужный-Полярный",
+      "startingPoint": "Радужный",
+      "endingPoint": "Полярный",
+      "stoppingPoints": [
+        {"openTime": "12:00:00", "closeTime": "15:00:00", "distance": 1250}
+      ],
+      "distance": 2500
+    },
+    {
+      "name": "Звезда-Полярный",
+      "startingPoint": "Звезда",
+      "endingPoint": "Полярный",
+      "stoppingPoints": [
+        {"openTime": "12:00:00", "closeTime": "15:00:00", "distance": 2000}
+      ],
+      "distance": 4000
+    }
+  ],
+  "trains": [
+    {
+      "name": "Радужный 6000 1",
+      "type": "MODEL",
+      "maxCap": 6000,
+      "curCap": 0,
+      "speed": 35,
+      "route": "Радужный-Полярный",
+      "routeList": ["Радужный-Полярный", "Звезда-Полярный"],
+      "lastStation": "Радужный",
+      "distanceTravelled": 0
+    },
+    {
+      "name": "Радужный 6000 2",
+      "type": "MODEL",
+      "maxCap": 6000,
+      "curCap": 0,
+      "speed": 35,
+      "route": "Радужный-Полярный",
+      "routeList": ["Радужный-Полярный", "Звезда-Полярный"],
+      "lastStation": "Радужный",
+      "distanceTravelled": 0
+    },
+    {
+      "name": "Радужный 4000 1",
+      "type": "MODEL",
+      "maxCap": 4000,
+      "curCap": 4000,
+      "speed": 40,
+      "route": "Радужный-Полярный",
+      "routeList": ["Радужный-Полярный", "Звезда-Полярный"],
+      "lastStation": "Радужный",
+      "distanceTravelled": 1250
+    },
+    {
+      "name": "Радужный 4000 2",
+      "type": "MODEL",
+      "maxCap": 4000,
+      "curCap": 0,
+      "speed": 40,
+      "route": "Радужный-Полярный",
+      "routeList": ["Радужный-Полярный", "Звезда-Полярный"],
+      "lastStation": "Полярный",
+      "distanceTravelled": 0
+    },
+    {
+      "name": "Радужный 4000 3",
+      "type": "MODEL",
+      "maxCap": 4000,
+      "curCap": 4000,
+      "speed": 40,
+      "route": "Радужный-Полярный",
+      "routeList": ["Радужный-Полярный", "Звезда-Полярный"],
+      "lastStation": "Полярный",
+      "distanceTravelled": 0
+    },
+    {
+      "name": "Звезда 1",
+      "type": "MODEL",
+      "maxCap": 5000,
+      "curCap": 0,
+      "speed": 45,
+      "route": "Звезда-Полярный",
+      "routeList": ["Радужный-Полярный", "Звезда-Полярный"],
+      "lastStation": "Звезда",
+      "distanceTravelled": 0
+    },
+    {
+      "name": "Звезда 2",
+      "type": "MODEL",
+      "maxCap": 5000,
+      "curCap": 0,
+      "speed": 45,
+      "route": "Звезда-Полярный",
+      "routeList": ["Радужный-Полярный", "Звезда-Полярный"],
+      "lastStation": "Звезда",
+      "distanceTravelled": 0
+    },
+    {
+      "name": "Полярный 1",
+      "type": "NOMODEL",
+      "maxCap": 10000,
+      "curCap": 0,
+      "transshipmentPoint": "Полярный"
+    }
+  ]
+}

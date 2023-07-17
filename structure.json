@@ -1,0 +1,37 @@
+{
+  "startDate": "yyyy-MM-dd hh:mm:ss",
+  "endDate": "yyyy-MM-dd hh:mm:ss",
+  "discreteness": 3600,
+  "stations": [
+    {
+      "name": "name",
+      "type": "TERMINAL/TRANSSHIPMENT",
+      "loadSpeed": 100,
+      "unloadSpeed": 100,
+      "curCap": 1000,
+      "maxCap": 1000,
+      "accumCap": 1000,
+      "prodSpeed": {"mean": 100, "SD": 10},
+      "wayNum": 5
+    }
+  ],
+  "routes": [
+    {
+      "name": "routeName",
+      "startingPoint": "station1",
+      "endingPoint": "station2",
+      "distance": 1000
+    }
+  ],
+  "trains": [
+    {
+      "name": "name",
+      "type": "",
+      "maxCap": 1000,
+      "curCap": 1000,
+      "speed": 123,
+      "route": "routeName",
+      "distanceTravelled": 100
+    }
+  ]
+}
